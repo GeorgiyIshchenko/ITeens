@@ -6,4 +6,4 @@
 
 # Miro (карта проекта): https://miro.com/welcomeonboard/OUpjMk1FcVBPWFNKYkdKU29zWklUUjJVQUZwMTZqN3EzUm45VmhJRFRTMUxhUGVDOUpyQUVqN1NYcXFJU1J6UXwzMDc0NDU3MzY4MDQzMTM5MTY0?invite_link_id=406434891116
 
-# DB designer
+# DB designer: https://dbdesigner.page.link/8k7jmNmN3zxjf1W16
