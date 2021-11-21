@@ -5,3 +5,5 @@
 # Discord-сервер: https://discord.gg/G5gPHv7h
 
 # Miro (карта проекта): https://miro.com/welcomeonboard/OUpjMk1FcVBPWFNKYkdKU29zWklUUjJVQUZwMTZqN3EzUm45VmhJRFRTMUxhUGVDOUpyQUVqN1NYcXFJU1J6UXwzMDc0NDU3MzY4MDQzMTM5MTY0?invite_link_id=406434891116
+
+# DB designer
