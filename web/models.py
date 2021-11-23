@@ -34,4 +34,4 @@ class Project(models.Model):
 
 class Image(models.Model):
     image = models.ImageField("image")
-    project = models.ForeignKey(Project,on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
