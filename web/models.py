@@ -3,35 +3,66 @@ from django.contrib.auth.models import AbstractUser
 
 
 class Student(AbstractUser):
-    description = models.CharField(max_length=300, null=True, blank=True)
+    description = models.CharField(max_length=256, null=True, blank=True)
     phone_number = models.CharField(max_length=16)
     city = models.CharField(max_length=32)
     school = models.CharField(max_length=64)
     projects = models.ManyToManyField('Project', related_name='students')
     git_profile = models.CharField(max_length=256)
-    skills = models.ManyToManyField()
+    skills = models.ManyToManyField('Skills', related_name='skills')
 
 
 class Resume(models.Model):
-    name = models.CharField("name", max_length=25)
-    description = models.CharField("description", max_length=300)
+    name = models.CharField("name", max_length=32)
+    description = models.CharField("description", max_length=512)
+    skills = models.ManyToManyField('Skills', related_name='skills')
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.name)
 
 
 class Project(models.Model):
-    name = models.CharField("name", max_length=50)
-    description = models.CharField("description",max_length=500)
-    git_url = models.CharField("git_url", max_length=50)
+    name = models.CharField("name", max_length=64)
+    description = models.CharField("description", max_length=512)
+    git_url = models.CharField("git_url", max_length=64)
     video_url = models.TextField("video_url")
     realisation_time = models.DateField("realisation_time")
 
 
-
-
+class Skills(models.Model):
+    SOFT = 's'
+    HARD = 'h'
+    CHOICES = [
+        (SOFT, 'soft'),
+        (HARD, 'hard')
+    ]
+    type = models.CharField(max_length=1, choices=CHOICES, default=HARD)    # это я тут хуйню написал
+    name = models.CharField("name", max_length=16)
 
 
 class Image(models.Model):
     image = models.ImageField("image")
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
+
+
+class Vacancy(models.Model):
+    name = models.CharField("name", max_length=64)
+    description = models.CharField("description", max_length=512)
+    place = models.CharField("place", max_length=128)
+    wage = models.FloatField('wage')
+    skills = models.ManyToManyField(Skills, related_name='skills')
+
+
+class Notification(models.Model):
+    FEEDBACK = 'f'
+    MESSAGE = 'm'
+    COMMENT = 'c'
+    CHOICES = [
+        (FEEDBACK, 'feedback'),
+        (MESSAGE, 'message'),
+        (COMMENT, 'comment')]
+    text = models.TextField('text')
+    type = models.CharField(max_length=1, choices=CHOICES, default=MESSAGE)  # и тут тоже
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    employer = models.ForeignKey()  # todo employer
