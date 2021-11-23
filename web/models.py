@@ -38,7 +38,7 @@ class Skills(models.Model):
         (HARD, 'hard')
     ]
     type = models.CharField(max_length=1, choices=CHOICES, default=HARD)    # это я тут хуйню написал
-    name = models.CharField("name", max_length=16)
+    name = models.CharField("name", max_length=16) 
 
 
 class Image(models.Model):
