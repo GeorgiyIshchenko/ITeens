@@ -14,7 +14,7 @@ class Student(User):
     school = models.CharField(max_length=64)
     projects = models.ManyToManyField('Project', related_name='students')
     git_profile = models.CharField(max_length=256)
-    skills = models.ManyToManyField('Skills', related_name='skills')
+    skills = models.ManyToManyField('Skills')
     favourite_vacancies = models.ManyToManyField('Vacancy', related_name='favourite_vacancies')
 
 
@@ -67,7 +67,7 @@ class Vacancy(models.Model):
     description = models.CharField("description", max_length=512)
     place = models.CharField("place", max_length=128)
     wage = models.FloatField('wage')
-    skills = models.ManyToManyField(Skills, related_name='skills')
+    skills = models.ManyToManyField(Skills)
     owner = models.ForeignKey(Employer, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -82,7 +82,7 @@ class Message(models.Model):
     text = models.TextField('text')
     img = models.ImageField('img')
     from_user = models.OneToOneField(User, on_delete=models.CASCADE)
-    to_user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # to_user = models.OneToOneField(User, on_delete=models.CASCADE)
     chat = models.ForeignKey(Chat, on_delete=models.CASCADE)
 
 
