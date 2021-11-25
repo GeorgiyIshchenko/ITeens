@@ -81,8 +81,8 @@ class Chat(models.Model):
 class Message(models.Model):
     text = models.TextField('text')
     img = models.ImageField('img')
-    from_user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # to_user = models.OneToOneField(User, on_delete=models.CASCADE)
+    from_user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='from_user')
+    to_user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='to_user')
     chat = models.ForeignKey(Chat, on_delete=models.CASCADE)
 
 
