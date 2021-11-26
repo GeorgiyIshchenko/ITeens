@@ -24,6 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ck#8a^3op5md%$mf0uex6m$hit#e*g!bpo4ts-r0vo)y$wtj7d'
 
+RECIPIENTS_EMAIL = ['help.iteens@yandex.ru']  # замените на свою почту
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "help.iteens@yandex.ru"
+EMAIL_HOST_PASSWORD = "lkbcrwvbvgyadmvm"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -35,12 +45,14 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
     'web',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +63,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "account.middleware.LocaleMiddleware",
+    "account.middleware.TimezoneMiddleware",
+]
+
+TEMPLATE_CONTEXT_PROCESSORS = [
+    "account.context_processors.account",
 ]
 
 ROOT_URLCONF = 'iteens.urls'
