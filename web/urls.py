@@ -9,6 +9,7 @@ app_name = WebConfig.name
 urlpatterns = [
     path('', homepage, name='homepage'),
     path('students/<str:slug>', student_view, name='profile_view'),
+    path('students/', students_view, name='students_view'),
 ]
 
 if settings.DEBUG:

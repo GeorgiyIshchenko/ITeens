@@ -45,7 +45,7 @@ class Student(User):
         verbose_name_plural = 'Программисты'
 
     def get_absolute_url(self):
-        return reverse('user_view', kwargs={'slug': self.slug})
+        return reverse('iteens:user_view', kwargs={'slug': self.slug})
 
 
 class Employer(User):

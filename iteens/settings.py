@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ck#8a^3op5md%$mf0uex6m$hit#e*g!bpo4ts-r0vo)y$wtj7d'
 
-RECIPIENTS_EMAIL = ['help.iteens@yandex.ru']  # замените на свою почту
+RECIPIENTS_EMAIL = ['help.iteens@yandex.ru']
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = "help.iteens@yandex.ru"
@@ -34,6 +34,24 @@ EMAIL_USE_SSL = True
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+ACCOUNT_EMAIL_UNIQUE = True
+ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
+ACCOUNT_LOGIN_URL = 'account_login'
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = ACCOUNT_LOGIN_URL
+ACCOUNT_PASSWORD_RESET_REDIRECT_URL = ACCOUNT_LOGIN_URL
+ACCOUNT_EMAIL_CONFIRMATION_URL = "account_confirm_email"
+ACCOUNT_SETTINGS_REDIRECT_URL = 'account_settings'
+ACCOUNT_PASSWORD_CHANGE_REDIRECT_URL = "account_password"
+ACCOUNT_LOGIN = '/'
+ACCOUNT_THEME_CONTACT_EMAIL = "club.estate@yandex.ru"
+
+AUTHENTICATION_BACKENDS = [
+    'account.auth_backends.EmailAuthenticationBackend',
+]
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -41,6 +59,8 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+
+SITE_ID = 2
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -51,8 +71,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'web',
     'account',
+    'bootstrap4',
+    'web',
 ]
 
 MIDDLEWARE = [
@@ -76,7 +97,10 @@ ROOT_URLCONF = 'iteens.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'web/templates',
+            'web/templates/account'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

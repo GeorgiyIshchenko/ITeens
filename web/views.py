@@ -24,5 +24,10 @@ def homepage(request):
 
 def student_view(request, slug):
     student = get_object_or_404(Student, slug__iexact=slug)
+    return render(request, 'student_view.html', {'student': student})
+
+def students_view(request, slug):
+    student = get_object_or_404(Student, slug__iexact=slug)
     print(transliterate(student.username))
     return render(request, 'student_view.html', {'student': student})
+
