@@ -50,6 +50,7 @@ ACCOUNT_THEME_CONTACT_EMAIL = "club.estate@yandex.ru"
 
 AUTHENTICATION_BACKENDS = [
     'account.auth_backends.EmailAuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 # SECURITY WARNING: don't run with debug turned on in production!
