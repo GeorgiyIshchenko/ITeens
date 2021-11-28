@@ -24,7 +24,9 @@ def homepage(request):
 
 def student_view(request, slug):
     student = get_object_or_404(Student, slug__iexact=slug)
-    return render(request, 'student_view.html', {'student': student})
+    chats = student.chats.all()
+    print(chats)
+    return render(request, 'student_view.html', {'student': student, 'chats': chats})
 
 
 def students_view(request):

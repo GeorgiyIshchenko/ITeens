@@ -95,7 +95,7 @@ class Skills(models.Model):
         (SOFT, 'soft'),
         (HARD, 'hard')
     ]
-    type = models.CharField(max_length=1, choices=CHOICES, default=HARD)    # это я тут хуйню написал
+    type = models.CharField(max_length=1, choices=CHOICES, default=HARD)
     name = models.CharField("name", max_length=16)
 
     def __str__(self):
@@ -140,7 +140,7 @@ class Notification(models.Model):
         (MESSAGE, 'message'),
         (COMMENT, 'comment')]
     text = models.TextField('text')
-    type = models.CharField(max_length=1, choices=CHOICES, default=MESSAGE)  # и тут тоже
+    type = models.CharField(max_length=1, choices=CHOICES, default=MESSAGE)
     receiver = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
