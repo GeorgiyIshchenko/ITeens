@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Резюме{% endblock %}
+
+{% block content %}
+
+    <!--todo-->
+    <script>
+    function changeMinLabel()
+    {
+        document.getElementById("minLabel").innerText=document.getElementById('wageMin').value;
+    }
+</script>
+
+    {% for resume in resumes %}
+    <div class="container">
+     <!-- todo href-->
+        <div class="card" style="width: 18rem;" href="{% url 'web:profile_view' student.slug%}">
+          <div class="card-body">
+              <h5 class="card-title">{{ resume.name }}</h5>
+            <p class="card-text">{{ resume.owner.first_name }} {{ resume.owner.last_name }}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ resume.description|truncatechars:30 }}</li>
+              {% for skill in resume.skills %}
+            <li class="list-group-item">{{ skill.name }}</li>
+              {% endfor %}
+          </ul>
+    </div>
+    </div>
+    {% endfor %}
+
+
+
+
+{% endblock %}

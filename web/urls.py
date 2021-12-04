@@ -10,6 +10,8 @@ urlpatterns = [
     path('', homepage, name='homepage'),
     path('students/<str:slug>', student_view, name='profile_view'),
     path('students/', students_view, name='students_view'),
+    path('resumes/', resumes_view, name='resumes_view'),
+    path('vacancies/', vacancies_view, name='vacancies_view'),
 ]
 
 if settings.DEBUG:

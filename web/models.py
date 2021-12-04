@@ -7,6 +7,12 @@ from googletrans import Translator
 
 
 class User(AbstractUser):
+    STUDENT = 's'
+    EMPLOYER = 'e'
+    CHOICES = [
+        (STUDENT, 'student'),
+        (EMPLOYER, 'employer')
+    ]
     username = models.CharField(verbose_name="Никнейм", max_length=24, unique=True)
     first_name = models.CharField(verbose_name="Имя", max_length=20)
     last_name = models.CharField(verbose_name="Фамилия", max_length=30)
@@ -17,6 +23,7 @@ class User(AbstractUser):
     city = models.CharField(max_length=16, verbose_name='Город проживания')
     phone_number = models.CharField(max_length=16, verbose_name='Номер телефона')
     chats = models.ManyToManyField('Chat', blank=True, null=True, related_name='chats', verbose_name='Чат')
+    role = models.CharField(max_length=1, choices=CHOICES, default=STUDENT)
 
     def __str__(self):
         return str(self.username)
@@ -26,13 +33,14 @@ class User(AbstractUser):
         verbose_name_plural = 'Пользователи'
 
 
-class Student(User):
+class Student(models.Model):
     school = models.CharField(max_length=64)
     projects = models.ManyToManyField('Project', blank=True, null=True, related_name='students')
     git_profile = models.CharField(max_length=256)
-    skills = models.ManyToManyField('Skills', blank=True, null=True)
+    skills = models.ManyToManyField('Skill', blank=True, null=True)
     favourite_vacancies = models.ManyToManyField('Vacancy', blank=True, null=True, related_name='favourite_vacancies')
-    slug = models.SlugField(max_length=150, unique=True, blank=True, null=True, verbose_name='Ссылка на профиль')
+    student_slug = models.SlugField(max_length=150, unique=True, blank=True, null=True, verbose_name='Ссылка на профиль')
+    student_user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='student_user')
 
     #def save(self, *args, **kwargs):
     #    if not self.id:
@@ -45,27 +53,28 @@ class Student(User):
         verbose_name_plural = 'Программисты'
 
     def get_absolute_url(self):
-        return reverse('iteens:user_view', kwargs={'slug': self.slug})
+        return reverse('iteens:profile_view', kwargs={'slug': self.slug})
 
 
-class Employer(User):
-    slug = models.SlugField(max_length=150, unique=True, blank=True, null=True, verbose_name='Ссылка на профиль')
+class Employer(models.Model):
+    employer_slug = models.SlugField(max_length=150, unique=True, blank=True, null=True, verbose_name='Ссылка на профиль')
+    employer_user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='employer_user')
 
     class Meta:
         verbose_name = 'Работодатель'
         verbose_name_plural = 'Работодатели'
 
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.slug = slugify(
-                f"students/{self.username}")
-            print(self.slug)
+    #def save(self, *args, **kwargs):
+    #    if not self.id:
+    #        self.slug = slugify(
+    #            f"students/{self.username}")
+    #        print(self.slug)
 
 
 class Resume(models.Model):
     name = models.CharField("name", max_length=32)
     description = models.CharField("description", max_length=512)
-    skills = models.ManyToManyField('Skills', related_name='skills')
+    skills = models.ManyToManyField('Skill', related_name='skills')
     owner = models.ForeignKey(Student, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=150, unique=True, blank=True, null=True, verbose_name='Ссылка на профиль')
 
@@ -83,12 +92,13 @@ class Project(models.Model):
     git_url = models.CharField("git_url", max_length=64)
     video_url = models.TextField("video_url")
     realisation_time = models.DateField("realisation_time")
+    skills = models.ManyToManyField('Skill', blank=True, null=True)
 
     def __str__(self):
         return str(self.name)
 
 
-class Skills(models.Model):
+class Skill(models.Model):
     SOFT = 's'
     HARD = 'h'
     CHOICES = [
@@ -112,7 +122,7 @@ class Vacancy(models.Model):
     description = models.CharField("description", max_length=512)
     place = models.CharField("place", max_length=128)
     wage = models.FloatField('wage')
-    skills = models.ManyToManyField(Skills)
+    skills = models.ManyToManyField(Skill)
     owner = models.ForeignKey(Employer, on_delete=models.CASCADE)
 
     def __str__(self):

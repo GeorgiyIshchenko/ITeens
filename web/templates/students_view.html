@@ -6,8 +6,8 @@
 
     {% for student in students %}
     <div class="container">
-    <a href="{% url 'web:profile_view' student.slug%}" style="text-decoration: none; color:#000000">
         <div class="card" style="width: 18rem;" href="{% url 'web:profile_view' student.slug%}">
+            <a href="{% url 'web:profile_view' student.slug %}" style="text-decoration: none; color:#000000">
           <img src="{{ student.profile_pic.url}}" class="card-img-top" alt="...">
           <div class="card-body">
               <h5 class="card-title">{{ student.username }}</h5>
@@ -18,10 +18,17 @@
             <li class="list-group-item">{{ student.city }}</li>
             <li class="list-group-item">{{ student.school }}</li>
           </ul>
+            </a>
     </div>
-    </a>
     </div>
     {% endfor %}
 
+    <div class="container">
 
+    </div>
+{% endblock %}
+
+{% block navbar_buttons %}
+    <li><a href="#" class="nav-link px-2 text-white">О нас</a></li>
+    <li><a href="#" class="nav-link px-2" style="color: white; background-color: green; border-radius: 3px;">Создать вакансию</a></li>
 {% endblock %}
