@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Программисты{% endblock %}
+
+{% block content %}
+
+    {% for user in users %}
+    <div class="container">
+        <div class="card" style="width: 18rem;" href="{% url 'users:profile' user.id%}">
+            <a href="{% url 'users:profile' user.id %}" style="text-decoration: none; color:#000000">
+          <img src="{{ user.profile_pic.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title">{{ user.username }}</h5>
+            <p class="card-text">{{ user.first_name }} {{ user.last_name }}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ user.phone_number }}</li>
+            <li class="list-group-item">{{ user.city }}</li>
+            <li class="list-group-item">{{ user.school }}</li>
+          </ul>
+            </a>
+    </div>
+    </div>
+    {% endfor %}
+
+    <div class="container">
+
+    </div>
+{% endblock %}
+
+{% block navbar_buttons %}
+    <li><a href="#" class="nav-link px-2 text-white">О нас</a></li>
+    <li><a href="#" class="nav-link px-2" style="color: white; background-color: green; border-radius: 3px;">Создать вакансию</a></li>
+{% endblock %}
