@@ -8,7 +8,7 @@ def homepage(request):
 
 def users_view(request):
     users = CustomUser.objects.all()
-    return render(request, 'students_view.html', {'users': users})
+    return render(request, 'users_view.html', {'users': users})
 
 
 def resumes_view(request):
