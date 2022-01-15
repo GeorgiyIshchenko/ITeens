@@ -8,5 +8,6 @@ app_name = UsersConfig.name
 urlpatterns = [
     path('register/', register, name='register'),
     path('auth/', auth, name='auth'),
-    path('profile/', profile, name='profile')
+    path('logout/', logout, name='logout'),
+    path('profile/', profile, name='profile'),
 ]

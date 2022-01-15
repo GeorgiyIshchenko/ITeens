@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 from .models import *
@@ -15,7 +15,7 @@ def register(request):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password1'])
             user.save()
-            redirect('auth')
+            redirect('users:auth')
     return render(request, 'register.html', {'form': form})
 
 
@@ -30,9 +30,17 @@ def auth(request):
             if user is not None:
                 request.session['pk'] = user.pk
                 login(request, user)
+                redirect('users:profile')
             else:
                 messages.error(request, 'Неправильный логин или пароль, повторите попытку входа')
     return render(request, 'auth.html', {'form': form})
+
+
+def logout_user(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('users:auth')
+    return render(request, 'logout.html')
 
 
 @login_required
