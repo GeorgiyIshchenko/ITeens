@@ -1,9 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'auth_base.html' %}
 
 {% load bootstrap4 %}
 
-{% block body %}
-    <form action="{% url 'users:register' %}" method="POST">
-
+{% block content %}
+    <form action="{% url 'users:register' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary" style="margin: 10px 0; padding: 5px 20px;">Зарегистрироваться</button>
     </form>
 {% endblock %}

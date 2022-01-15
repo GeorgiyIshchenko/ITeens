@@ -1,5 +1,9 @@
 from django.urls import path, include
+
 from .views import *
+from .apps import WebConfig
+
+app_name = WebConfig.name
 
 
 urlpatterns = [

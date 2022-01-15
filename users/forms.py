@@ -5,10 +5,9 @@ from .models import *
 
 
 class RegisterForm(forms.ModelForm):
-    password1 = forms.CharField(max_length=36, widget=forms.PasswordInput(attrs={'label': 'Пароль'}))
-    password2 = forms.CharField(max_length=36, widget=forms.PasswordInput(attrs={'label': 'Повторите пароль'}))
+    password1 = forms.CharField(max_length=36, widget=forms.PasswordInput(), label="Пароль")
+    password2 = forms.CharField(max_length=36, widget=forms.PasswordInput(), label='Повторите пароль')
 
     class Meta:
         model = CustomUser
-        fields = '__all__'
-
+        fields = 'first_name', 'last_name', 'email', 'profile_pic', 'city', 'phone_number', 'role'
