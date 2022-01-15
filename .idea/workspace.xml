@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="82fb9ad2-5dc4-4e00-bd25-ca875a3c81bc" name="Default Changelist" comment="student view">
+      <change afterPath="$PROJECT_DIR$/WinRAR archive.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/migrations/0012_rename_slug_employer_employer_slug_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/migrations/0013_remove_student_favourite_vacancies_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/migrations/0014_alter_resume_options_alter_user_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/migrations/0015_alter_user_options_alter_user_managers_and_more.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iteens/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/iteens/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iteens/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/iteens/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/students_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/students_view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="41956fd5-9a63-474a-b200-f57699e97028" />
+  <component name="ProjectId" id="21KjnT2FSxE8mojSvp8tqsGalQy" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="82fb9ad2-5dc4-4e00-bd25-ca875a3c81bc" name="Default Changelist" comment="" />
+      <created>1637696840980</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637696840980</updated>
+      <workItem from="1637696842046" duration="12550000" />
+      <workItem from="1637870715743" duration="10947000" />
+      <workItem from="1638018194712" duration="7037000" />
+      <workItem from="1638037497718" duration="4428000" />
+      <workItem from="1638107739467" duration="31694000" />
+      <workItem from="1639833357390" duration="438000" />
+      <workItem from="1639838509564" duration="1242000" />
+      <workItem from="1640251364304" duration="3013000" />
+      <workItem from="1640446794602" duration="606000" />
+      <workItem from="1642190472644" duration="6958000" />
+    </task>
+    <task id="LOCAL-00001" summary="student view">
+      <created>1637875982433</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637875982433</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="student view" />
+    <option name="LAST_COMMIT_MESSAGE" value="student view" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="734" y="395" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637834960975">
+      <screen x="0" y="40" width="2560" height="1400" />
+    </state>
+    <state x="734" y="395" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.2560.1400@0.40.2560.1400" timestamp="1637834960975" />
+    <state x="1085" y="456" key="#com.intellij.ide.util.MemberChooser" timestamp="1638631217851">
+      <screen x="0" y="40" width="2560" height="1400" />
+    </state>
+    <state x="1085" y="456" key="#com.intellij.ide.util.MemberChooser/0.40.2560.1400@0.40.2560.1400" timestamp="1638631217851" />
+    <state x="1060" y="482" key="FileChooserDialogImpl" timestamp="1638018363705">
+      <screen x="0" y="40" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="482" key="FileChooserDialogImpl/0.40.2560.1400@0.40.2560.1400" timestamp="1638018363705" />
+    <state x="781" y="385" key="SettingsEditor" timestamp="1642252624564">
+      <screen x="0" y="40" width="2560" height="1400" />
+    </state>
+    <state x="781" y="385" key="SettingsEditor/0.40.2560.1400@0.40.2560.1400" timestamp="1642252624564" />
+    <state x="872" y="473" key="Vcs.Push.Dialog.v2" timestamp="1640251398924">
+      <screen x="0" y="40" width="2560" height="1400" />
+    </state>
+    <state x="872" y="473" key="Vcs.Push.Dialog.v2/0.40.2560.1400@0.40.2560.1400" timestamp="1640251398924" />
+    <state x="1097" y="654" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637876060766">
+      <screen x="0" y="40" width="2560" height="1400" />
+    </state>
+    <state x="1097" y="654" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.2560.1400@0.40.2560.1400" timestamp="1637876060766" />
+    <state x="943" y="355" width="672" height="678" key="search.everywhere.popup" timestamp="1638222051837">
+      <screen x="0" y="40" width="2560" height="1400" />
+    </state>
+    <state x="943" y="355" width="672" height="678" key="search.everywhere.popup/0.40.2560.1400@0.40.2560.1400" timestamp="1638222051837" />
+  </component>
+</project>
