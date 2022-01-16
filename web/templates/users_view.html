@@ -8,7 +8,7 @@
     <div class="container">
         <div class="card" style="width: 18rem;" href="{% url 'users:profile' user.id%}">
             <a href="{% url 'users:profile' user.id %}" style="text-decoration: none; color:#000000">
-          <img src="{{ user.profile_pic.url}}" class="card-img-top" alt="...">
+          <img src="{{ user.profile_pic.url}}"  class="card-img-top" alt="...">
           <div class="card-body">
               <h5 class="card-title">{{ user.username }}</h5>
             <p class="card-text">{{ user.first_name }} {{ user.last_name }}</p>

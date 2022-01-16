@@ -1,5 +1,6 @@
 from django.db import models
 from users.models import CustomUser
+from django.utils import timezone
 
 
 class Resume(models.Model):
@@ -39,4 +40,19 @@ class Skill(models.Model):
         return str(self.name)
 
 
+class Chat(models.Model):
+    members = models.ManyToManyField(CustomUser, verbose_name='Участник')
 
+
+class Message(models.Model):
+    chat = models.ForeignKey(Chat, verbose_name="Чат")
+    author = models.ForeignKey(CustomUser, verbose_name='Автор')
+    message = models.TextField()
+    pub_date = models.DateTimeField(default=timezone.now)
+    is_read = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['pub_date']
+
+    def __str__(self):
+        return self.message

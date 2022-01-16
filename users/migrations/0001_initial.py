@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('first_name', models.CharField(max_length=20, verbose_name='Имя')),
                 ('last_name', models.CharField(max_length=30, verbose_name='Фамилия')),
                 ('email', models.EmailField(max_length=100, unique=True, verbose_name='Электронная почта')),
-                ('profile_pic', models.ImageField(blank=True, default='/media/default_user_photo.jpg', null=True, upload_to='users_photo', verbose_name='Фотография')),
+                ('profile_pic', models.ImageField(blank=True, default='/static/default_user_photo.jpg', null=True, upload_to='users_photo', verbose_name='Фотография')),
                 ('description', models.CharField(blank=True, max_length=256, null=True, verbose_name='Описание профиля')),
                 ('city', models.CharField(max_length=16, verbose_name='Город проживания')),
                 ('phone_number', models.CharField(max_length=16, verbose_name='Номер телефона')),

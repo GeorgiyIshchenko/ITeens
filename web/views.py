@@ -7,8 +7,13 @@ def homepage(request):
 
 
 def users_view(request):
-    users = CustomUser.objects.all()
-    return render(request, 'users_view.html', {'users': users})
+    isEmployer = request.user.role == 'e'
+    print(isEmployer)
+    if isEmployer:
+        users = CustomUser.objects.filter(role='s')
+    else:
+        users = CustomUser.objects.filter(role='e')
+    return render(request, 'users_view.html', {'users': users, 'isEmployer': isEmployer})
 
 
 def resumes_view(request):

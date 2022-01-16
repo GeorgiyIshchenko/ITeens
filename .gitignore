@@ -1,5 +1,5 @@
 .idea
 __pychace__
 venv
-media
+static
 db.sqlite3
