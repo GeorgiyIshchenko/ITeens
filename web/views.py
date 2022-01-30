@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django import template
 from .models import *
 
 
@@ -7,10 +8,17 @@ def homepage(request):
 
 
 def users_view(request):
-    isEmployer = request.user.role == 'e'
+    if request.user.is_authenticated:
+        isEmployer = request.user.role == 'e'
+    else:
+        isEmployer = None
+
     print(isEmployer)
+
     if isEmployer:
         users = CustomUser.objects.filter(role='s')
+    elif isEmployer is None:
+        users = []
     else:
         users = CustomUser.objects.filter(role='e')
     return render(request, 'users_view.html', {'users': users, 'isEmployer': isEmployer})
@@ -26,4 +34,20 @@ def vacancies_view(request):
     wage_max = request.GET.get('wageMax', 500000)
     vacancies = Vacancy.objects.filter(wage__gte=wage_min, wage__lte=wage_max)
     return render(request, 'vacancies_view.html', {'vacancies': vacancies, 'wage_min': wage_min, 'wage_max': wage_max})
+
+
+def chats_view(request):
+    chats = Chat.objects.filter(members__in=[request.user.id])
+    print(chats)
+    return render(request, 'chats_view.html', {'chats': chats, 'user': request.user})
+
+
+def chats_create(request):
+    pass
+
+
+def chat_view(request):
+    pass
+
+
 

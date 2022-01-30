@@ -11,4 +11,7 @@ urlpatterns = [
     path('users/', users_view, name='users_view'),
     path('vacancies/', vacancies_view, name='vacancies_view'),
     path('resumes/', resumes_view, name='resumes_view'),
+    path('chats/', chats_view, name='chats_view'),
+    path('chats/create', chats_create, name='chats_create'),
+    path('chats/<str:chat_id>', chat_view, name='chat_view'),
 ]

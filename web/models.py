@@ -1,4 +1,5 @@
 from django.db import models
+from django import template
 from users.models import CustomUser
 from django.utils import timezone
 
@@ -45,8 +46,8 @@ class Chat(models.Model):
 
 
 class Message(models.Model):
-    chat = models.ForeignKey(Chat, verbose_name="Чат")
-    author = models.ForeignKey(CustomUser, verbose_name='Автор')
+    chat = models.ForeignKey(Chat, verbose_name="Чат", on_delete=models.CASCADE)
+    author = models.ForeignKey(CustomUser, verbose_name='Автор', on_delete=models.CASCADE)
     message = models.TextField()
     pub_date = models.DateTimeField(default=timezone.now)
     is_read = models.BooleanField(default=False)
