@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% include 'header.html' %}
+    <a type="button" href="{% url 'web:chat_create' user%}" class="btn btn-primary btn-lg px-4 gap-3">Написать</a>
 {% endblock %}

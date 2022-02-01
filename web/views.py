@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django import template
 from .models import *
 
@@ -42,12 +42,17 @@ def chats_view(request):
     return render(request, 'chats_view.html', {'chats': chats, 'user': request.user})
 
 
-def chats_create(request):
-    pass
+def chats_create(request, companion):
+    nchat = Chat(members=[request.user, companion])
+    nchat.save()
+    return redirect(chat_view, nchat.id)
 
 
-def chat_view(request):
-    pass
+def chat_view(request, id):
+    chat = Chat.objects.filter(id=id)
+    messages = chat.message_set
+    return render(request, 'chat_view.html', {'chat': chat, 'messages': messages})
+
 
 
 
